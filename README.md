@@ -12,7 +12,7 @@ Before creating your new VPC, DeCidr will read your 'Backend' VPC's Route Table(
 
 ## Installation
 
-Run `yarn add -g decidr` to install the application globally.
+Run `yarn global add decidr` to install the application globally.
 
 ## Use
 
