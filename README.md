@@ -1,4 +1,4 @@
-# DeCidr
+# DeCidr [![npm version](https://badge.fury.io/js/decidr.svg)](https://badge.fury.io/js/decidr)
 
 ## Overview
 
@@ -12,7 +12,7 @@ Before creating your new VPC, DeCidr will read your 'Backend' VPC's Route Table(
 
 ## Installation
 
-Run `yarn add -g DeCidr` to install the application globally.
+Run `yarn add -g decidr` to install the application globally.
 
 ## Use
 
