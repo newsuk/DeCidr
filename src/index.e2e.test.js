@@ -10,8 +10,9 @@ describe('index e2e tests', function () {
     it('should generate a free CIDR block', async () => {
         const command = 'node ./lib/index.js -b 24 -s 10.180.0.0 -e 10.200.0.0 -n FAKE-TAG-NAME -x FAKE-TAG-VALUE';
 
-        const { stdout } = await exec(command);
+        const { stdout, stderr } = await exec(command);
 
+        stderr.should.equal('');
         stdout.should.equal('10.180.0.0/24\n');
     });
 
