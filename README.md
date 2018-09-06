@@ -36,6 +36,11 @@ Output:
 
 `-h --help` - Provides tool help information
 
+### Exit Codes
+Exit Code 1: Please provide all arguments (blockSize,rangeStart,rangeEnd,tagName,tagValue)
+
+Exit Code 2: No availability in the range provided
+
 ## Development
 
 `yarn` to get the dependencies

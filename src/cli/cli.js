@@ -36,7 +36,10 @@ function validateArguments(args) {
     if (args.tagName == null) errors.push('tagName');
     if (args.tagValue == null) errors.push('tagValue');
 
-    if (errors.length > 0) throw new Error(`Please provide all arguments (${errors})`);
+    if (errors.length > 0) {
+        process.exitCode = 1;
+        throw new Error(`Please provide all arguments (${errors})`);
+    };
 
     return args;
 }
