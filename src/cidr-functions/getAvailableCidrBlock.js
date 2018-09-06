@@ -17,18 +17,12 @@ export default function getAvailableCidrBlock(
     sortedOccupiedCidrBlocks.forEach(block => {
         const isInRange = isCidrInRange(reservedIpRange, block);
 
-        if (isInRange) {
-            if (cidrsAreOverlapping([block, newCidrStartAddress]))
-                newCidrStartAddress = getNextAddress(block);
-
-            if (
-                !isCidrInRange(
-                    reservedIpRange,
-                    getEndAddress(`${newCidrStartAddress}/${newCidrBlockSize}`)
-                )
-            )
-                throw new Error('No availability in the range provided');
-        }
+        if (isInRange && cidrsAreOverlapping([block, newCidrStartAddress])) newCidrStartAddress = getNextAddress(block);
     });
+
+    if (!isCidrInRange(reservedIpRange, getEndAddress(`${newCidrStartAddress}/${newCidrBlockSize}`))) {
+        process.exitCode = 2;
+        throw new Error('No availability in the range provided');
+    }
     return `${newCidrStartAddress}/${newCidrBlockSize}`;
 }
