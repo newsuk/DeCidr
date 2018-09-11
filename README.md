@@ -1,5 +1,7 @@
 # DeCidr [![npm version](https://badge.fury.io/js/decidr.svg)](https://badge.fury.io/js/decidr)
 
+### Brought to you by The Times Tooling team  🛠
+
 ## Overview
 
 DeCidr is a Node.js application that generates a non-clashing CIDR block to be used with a peering connection.
