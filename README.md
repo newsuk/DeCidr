@@ -1,4 +1,4 @@
-# DeCidr [![npm version](https://badge.fury.io/js/decidr.svg)](https://badge.fury.io/js/decidr)
+# DeCidr [![npm version](https://badge.fury.io/js/decidr.svg)](https://badge.fury.io/js/decidr)[![Build Status](https://app.bitrise.io/app/33bd995fc810085b/status.svg?token=ingp6Eo62-kDbYprYQYybQ&branch=master)](https://app.bitrise.io/app/33bd995fc810085b)
 
 ### Brought to you by The Times Tooling team  🛠
 
