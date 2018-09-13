@@ -1,6 +1,6 @@
 {
   "name": "decidr",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Suggests an available cidr range for a peering connection",
   "main": "lib/index.js",
   "repository": "git@github.com:newsuk/DeCidr.git",
