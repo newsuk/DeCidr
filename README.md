@@ -26,7 +26,7 @@ Verbose:
 
 Minimal:
 
- `DeCidr -b 24 -s 10.180.0.0 -e 10.200.0.0 -t Name -x private*-rtb`
+ `DeCidr -b 24 -s 10.180.0.0 -e 10.200.0.0 -n Name -x private*-rtb`
 
 Output: 
 
