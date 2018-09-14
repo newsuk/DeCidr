@@ -2,8 +2,6 @@ import {
     EC2
 } from '../helpers/aws';
 
-process.env.AWS_SDK_LOAD_CONFIG = 1;
-
 function getRouteTables(tagName, tagValue) {
     const params = {
         Filters: [{
