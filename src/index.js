@@ -3,7 +3,10 @@
 import cli from './cli/cli';
 import getAvailableCidrBlock from './cidr-functions/getAvailableCidrBlock';
 import getOccupiedCidrBlocks from './cidr-functions/getOccupiedCidrBlocks';
-import { version, description } from '../package.json';
+import {
+    version,
+    description
+} from '../package.json';
 
 cli({
     version,
@@ -14,4 +17,7 @@ cli({
         getOccupiedCidrBlocks(args.tagName, args.tagValue)
             .then(occupiedBlocks => getAvailableCidrBlock(args.blockSize, args.rangeStart, args.rangeEnd, occupiedBlocks)))
     .then(console.log)
-    .catch(error => console.error(error.message));
+    .catch(error => {
+        console.error(error.message);
+        process.exitCode = 1;
+    });

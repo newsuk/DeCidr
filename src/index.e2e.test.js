@@ -46,7 +46,7 @@ describe('index e2e tests', function () {
         }
 
         expectedError.should.exist;
-        expectedError.code.should.equal(2);
+        expectedError.code.should.equal(1);
         expectedError.stderr.should.equal('No availability in the range provided\n');
     });
 });
