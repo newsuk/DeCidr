@@ -29,5 +29,15 @@ function getRoutes(routeTables) {
 }
 
 export default function getOccupiedCidrBlocks(tagName, tagValue) {
-    return getRouteTables(tagName, tagValue).then(getRoutes);
+    const tagNames = tagName.split(',');
+    const tagValues = tagValue.split(',');
+    const promises = [];
+
+    tagValues.forEach((value, index) => {
+        promises.push(getRouteTables(tagNames[index], value))
+    })
+
+    return Promise.all(promises)
+        .then(results => results.reduce((a,b) => a.concat(b), []))
+        .then(getRoutes)
 }
