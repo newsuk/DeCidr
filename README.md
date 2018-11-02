@@ -32,6 +32,10 @@ Output:
 
 `10.180.0.0/24`
 
+You can also provide multiple route tables, separated with a comma, in the following way (note the multiple tagNames):
+
+`DeCidr --blockSize 24 --rangeStart 10.180.0.0 --rangeEnd 10.200.0.0 --tagName Name,Name --tagValue private*-rtb,public*-rtb`
+
 #### Extra
 
 `-v --version` - Prints the version of DeCidr
