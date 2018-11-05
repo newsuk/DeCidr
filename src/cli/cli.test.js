@@ -17,8 +17,8 @@ describe('cli', () => {
             blockSize: 24,
             rangeStart: '10.180.0.0',
             rangeEnd: '10.200.0.0',
-            tagName: 'Name',
-            tagValue: 'Value'
+            tagNames: 'Name',
+            tagValues: 'Value'
         };
 
         sandbox.stub(ArgumentParser.prototype, 'parseArgs').returns(expectedArgs);
@@ -46,6 +46,6 @@ describe('cli', () => {
         }
 
         // Verify.
-        expectedError.message.should.equal('Please provide all arguments (blockSize,rangeStart,rangeEnd,tagName,tagValue)');
+        expectedError.message.should.equal('Please provide all arguments (blockSize,rangeStart,rangeEnd,tagNames,tagValues)');
     });
 });
