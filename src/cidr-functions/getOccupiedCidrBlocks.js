@@ -28,16 +28,16 @@ function getRoutes(routeTables) {
     return Array.from(uniqueRoutes);
 }
 
-export default function getOccupiedCidrBlocks(tagName, tagValue) {
-    const tagNames = tagName.split(',');
-    const tagValues = tagValue.split(',');
+export default function getOccupiedCidrBlocks(tagNames, tagValues) {
+    const tagNamesArr = tagNames.split(',');
+    const tagValuesArr = tagValues.split(',');
     const routeTablePromises = [];
 
-    tagValues.forEach((value, index) => {
-        routeTablePromises.push(getRouteTables(tagNames[index], value))
+    tagValuesArr.forEach((value, index) => {
+        routeTablePromises.push(getRouteTables(tagNamesArr[index], value))
     })
 
     return Promise.all(routeTablePromises)
-        .then(results => results.reduce((a,b) => a.concat(b), []))
+        .then(results => results.reduce((routeTableA,routeTableB) => routeTableA.concat(routeTableB), []))
         .then(getRoutes)
 }

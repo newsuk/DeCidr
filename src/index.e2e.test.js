@@ -30,7 +30,7 @@ describe('index e2e tests', function () {
 
         expectedError.should.exist;
         expectedError.code.should.equal(1);
-        expectedError.stderr.should.equal('Please provide all arguments (blockSize,rangeStart,rangeEnd,tagName,tagValue)\n');
+        expectedError.stderr.should.equal('Please provide all arguments (blockSize,rangeStart,rangeEnd,tagNames,tagValues)\n');
     });
 
     it('should return an error when there are no free CIDR blocks left', async () => {

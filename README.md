@@ -22,7 +22,7 @@ To use the tool you will need to provide all of the below required values. When 
 
 Verbose: 
 
-`DeCidr --blockSize 24 --rangeStart 10.180.0.0 --rangeEnd 10.200.0.0 --tagName Name --tagValue private*-rtb`
+`DeCidr --blockSize 24 --rangeStart 10.180.0.0 --rangeEnd 10.200.0.0 --tagNames Name --tagValues private*-rtb`
 
 Minimal:
 
@@ -34,7 +34,7 @@ Output:
 
 You can also provide multiple route tables, separated with a comma, in the following way (note the multiple tagNames):
 
-`DeCidr --blockSize 24 --rangeStart 10.180.0.0 --rangeEnd 10.200.0.0 --tagName Name,Name --tagValue private*-rtb,public*-rtb`
+`DeCidr --blockSize 24 --rangeStart 10.180.0.0 --rangeEnd 10.200.0.0 --tagNames Name,Name --tagValues private*-rtb,public*-rtb`
 
 #### Extra
 
