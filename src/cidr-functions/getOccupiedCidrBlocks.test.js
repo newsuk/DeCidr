@@ -49,7 +49,7 @@ describe('getOccupiedCidrBlocks', () => {
         // Setup.
         const tagNames = 'Name,Name';
         const tagValues = 'nu-cps-platform-tnl-uat-private*-rtb,nu-cps-platform-tnl-uat-public*-rtb';
-        const expectedBlocks = ['0.0.0.0/0', '10.180.0.0/16', '10.180.1.0/16'];
+        const expectedBlocks = ['0.0.0.0/0', '10.180.0.0/16', '10.180.1.0/16', '10.180.2.0/16'];
 
         const mockData = {
             RouteTables: [{
@@ -66,10 +66,22 @@ describe('getOccupiedCidrBlocks', () => {
             }
             ]
         }
+        const mockData2 = {
+            RouteTables: [{
+                Routes: [{
+                    DestinationCidrBlock: '10.180.2.0/16'
+                }]
+            }
+            ]
+        }
 
-        sandbox.stub(aws, 'EC2').returns({
+        sandbox.stub(aws, 'EC2').onCall(0).returns({
             describeRouteTables: () => ({
                 promise: () => Promise.resolve(mockData)
+            })
+        }).onCall(1).returns({
+            describeRouteTables: () => ({
+                promise: () => Promise.resolve(mockData2)
             })
         });
 
