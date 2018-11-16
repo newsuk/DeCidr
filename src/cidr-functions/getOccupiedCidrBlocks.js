@@ -21,10 +21,10 @@ function getRoutes(routeTables) {
 
     routeTables.forEach(routeTable => {
         routeTable.Routes.forEach(route => {
-            uniqueRoutes.add(route.DestinationCidrBlock);
+            const ipv4 = route.DestinationCidrBlock;
+            if(ipv4) {uniqueRoutes.add(route.DestinationCidrBlock)};
         });
     });
-
     return Array.from(uniqueRoutes);
 }
 
