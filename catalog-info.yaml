@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: DeCidr
+  description: Component for DeCidr
+  annotations:
+    circleci.com/project-slug: github/newsuk/DeCidr
+    backstage.io/source-location: url:https://github.com/newsuk/DeCidr/
+    github.com/team-slug: newsuk/DeCidr
+    backstage.io/productivity-hub-metrics-enabled: 'true'
+  tags:
+    - bu:newsuk
+spec:
+  type: service
+  lifecycle: production
+  owner: nuk
